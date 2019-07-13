@@ -5,7 +5,7 @@
     function addButton(input){  
     urlArray = [];
     var APIKey = "CGXu8vlxJsQKdpB449EGKD7uIormcIan";
-    var queryURL = "//api.giphy.com/v1/gifs/search?q="+input+"&api_key="+APIKey;
+    var queryURL = "https//api.giphy.com/v1/gifs/search?q="+input+"&api_key="+APIKey;
       
     // We then created an AJAX call
         $.ajax({
@@ -16,6 +16,7 @@
            
 
             var gif = response.data;
+            console.log(gif[i].images.fixed_height_still.url);
             $(".imageContainer").empty();
             for(var i = 0; i < gif.length; i++){
             
